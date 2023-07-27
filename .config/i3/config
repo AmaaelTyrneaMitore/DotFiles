@@ -1,0 +1,403 @@
+exec --no-startup-id ~/set_once_i3.sh
+
+#######################
+# config starts here: #
+#######################
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango: Noto Sans Regular 10
+
+# set the mod key to the winkey:
+set $mod Mod4
+
+#####################
+# workspace layout: #
+#####################
+
+# default i3 tiling mode:
+workspace_layout default
+
+##############################
+# extra options for windows: #
+##############################
+
+#border indicator on windows:
+new_window pixel 1
+
+# Set inner/outer gaps
+gaps inner 4
+gaps outer 2
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# switch to workspace
+bindsym $mod+1    workspace  $ws1
+bindsym $mod+2    workspace  $ws2
+bindsym $mod+3    workspace  $ws3
+bindsym $mod+4    workspace  $ws4
+bindsym $mod+5    workspace  $ws5
+bindsym $mod+6    workspace  $ws6
+bindsym $mod+7    workspace  $ws7
+bindsym $mod+8    workspace  $ws8
+bindsym $mod+9    workspace  $ws9
+bindsym $mod+0    workspace  $ws10
+
+# switch to workspace with numpad keys
+bindcode $mod+87 workspace 1
+bindcode $mod+88 workspace 2
+bindcode $mod+89 workspace 3
+bindcode $mod+83 workspace 4
+bindcode $mod+84 workspace 5
+bindcode $mod+85 workspace 6
+bindcode $mod+79 workspace 7
+bindcode $mod+80 workspace 8
+bindcode $mod+81 workspace 9
+bindcode $mod+90 workspace 10
+
+# switch to workspace with numlock numpad keys
+bindcode $mod+Mod2+87 workspace $ws1
+bindcode $mod+Mod2+88 workspace $ws2
+bindcode $mod+Mod2+89 workspace $ws3
+bindcode $mod+Mod2+83 workspace $ws4
+bindcode $mod+Mod2+84 workspace $ws5
+bindcode $mod+Mod2+85 workspace $ws6
+bindcode $mod+Mod2+79 workspace $ws7
+bindcode $mod+Mod2+80 workspace $ws8
+bindcode $mod+Mod2+81 workspace $ws9
+bindcode $mod+Mod2+90 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1    move container to workspace  $ws1
+bindsym $mod+Shift+2    move container to workspace  $ws2
+bindsym $mod+Shift+3    move container to workspace  $ws3
+bindsym $mod+Shift+4    move container to workspace  $ws4
+bindsym $mod+Shift+5    move container to workspace  $ws5
+bindsym $mod+Shift+6    move container to workspace  $ws6
+bindsym $mod+Shift+7    move container to workspace  $ws7
+bindsym $mod+Shift+8    move container to workspace  $ws8
+bindsym $mod+Shift+9    move container to workspace  $ws9
+bindsym $mod+Shift+0    move container to workspace  $ws10
+
+# move focused container to workspace with numpad keys
+bindcode $mod+Shift+Mod2+87 	move container to workspace  $ws1
+bindcode $mod+Shift+Mod2+88 	move container to workspace  $ws2
+bindcode $mod+Shift+Mod2+89 	move container to workspace  $ws3
+bindcode $mod+Shift+Mod2+83 	move container to workspace  $ws4
+bindcode $mod+Shift+Mod2+84 	move container to workspace  $ws5
+bindcode $mod+Shift+Mod2+85 	move container to workspace  $ws6
+bindcode $mod+Shift+Mod2+79 	move container to workspace  $ws7
+bindcode $mod+Shift+Mod2+80 	move container to workspace  $ws8
+bindcode $mod+Shift+Mod2+81 	move container to workspace  $ws9
+bindcode $mod+Shift+Mod2+90 	move container to workspace  $ws10
+
+# move focused container to workspace with numpad keys
+bindcode $mod+Shift+87 	 move container to workspace  $ws1
+bindcode $mod+Shift+88 	 move container to workspace  $ws2
+bindcode $mod+Shift+89 	 move container to workspace  $ws3
+bindcode $mod+Shift+83 	 move container to workspace  $ws4
+bindcode $mod+Shift+84 	 move container to workspace  $ws5
+bindcode $mod+Shift+85 	 move container to workspace  $ws6
+bindcode $mod+Shift+79 	 move container to workspace  $ws7
+bindcode $mod+Shift+80 	 move container to workspace  $ws8
+bindcode $mod+Shift+81 	 move container to workspace  $ws9
+bindcode $mod+Shift+90 	 move container to workspace  $ws10
+
+# resize window (you can also use the mouse for that):
+mode "resize" {
+  # These bindings trigger as soon as you enter the resize mode
+  # Pressing left will shrink the window's width.
+  # Pressing right will grow the window's width.
+  # Pressing up will shrink the window's height.
+  # Pressing down will grow the window's height.
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
+  # bindsym ntilde resize grow width 10 px or 10 ppt
+
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+######################################
+# keybindings for different actions: #
+######################################
+
+# start a terminal
+bindsym $mod+Return exec /usr/bin/kitty
+
+# kill focused window
+bindsym $mod+q kill
+
+# exit-menu
+bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
+
+# Lock the system
+# lock with a picture:
+# bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
+# lock by blurring the screen:
+# bindsym $mod+l exec ~/.config/i3/scripts/blur-lock
+bindsym $mod+l exec ~/.config/i3/scripts/tokyonight-lock.sh
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to update i3)
+bindsym $mod+Shift+r restart
+
+# Backlight control
+bindsym XF86MonBrightnessUp exec xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
+bindsym XF86MonBrightnessDown exec xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+b focus up
+bindsym $mod+o focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+b move up
+bindsym $mod+Shift+o move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+g layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# keybinds to toggle single and dual monitor setup
+bindsym $mod+Shift+n exec ~/.config/i3/scripts/single_display.sh
+bindsym $mod+Shift+m exec ~/.config/i3/scripts/StartupScripts/setup_monitors.sh
+
+# keybind to apply the saved layout
+# exec --no-startup-id "i3-msg 'workspace 6:; append_layout /home/honey/.i3/workspace-6.json'"
+# bindsym $mod+Control+6 exec --no-startup-id "i3-msg 'workspace 6:; append_layout /home/honey/.i3/workspace-6.json'"
+
+# Multimedia Keys
+
+# volume
+# using pulse audio
+# bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+# bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+# using pipewire with pamixer
+bindsym XF86AudioRaiseVolume exec pamixer -i 5 #to increase 5% && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec pamixer -d 5 #to decrease 5% && pkill -RTMIN+1 i3blocks
+
+# mute
+#bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+bindsym XF86AudioMute exec pamixer --toggle-mute && killall -USR1 i3blocks
+
+# audio control
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Redirect sound to headphones
+bindsym $mod+p exec /usr/local/bin/switch-audio-port
+
+## App shortcuts
+bindsym $mod+w exec /usr/bin/brave
+bindsym $mod+n exec /usr/bin/kitty --class ranger -e /usr/bin/ranger
+bindsym Print exec scrot ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym --release Shift+Print exec "scrot -s '%Y-%m-%d-%T-selection.png' -e 'mv $f ~/Pictures/Screenshots/'"
+
+# Power Profiles menu switcher (rofi)
+bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
+
+##########################################
+# configuration for workspace behaviour: #
+##########################################
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# use workspaces on different displays:
+# where you have to replace VGA-0/HDMI-0 with the names for your displays
+# you can get from xrandr command
+workspace $ws1 output HDMI1
+workspace $ws5 output eDP1
+
+# bind program to workspace and focus to them on startup:
+assign [instance="kitty"] $ws1
+assign [class="(?i)microsoft-edge"] $ws2
+assign [class="(?i)google-chrome"] $ws2
+assign [class="Brave-browser"] $ws2
+assign [class="code-oss"] $ws3
+assign [class="Emacs"] $ws3
+assign [class="jetbrains-studio"] $ws3
+assign [class="ranger" instance="ranger"] $ws4
+assign [class="Thunar" instance="thunar"] $ws4
+assign [class="mpv"] $ws5
+assign [class="qBittorrent"] $ws7
+assign [class="MuPDF"] $ws8
+
+# added this because new windows were showing with titlebars
+for_window [class="^.*"] border pixel 1
+
+# automatic set focus new window if it opens on another workspace then the current:
+for_window [class=kitty] focus
+for_window [class=(?i)google-chrome] focus
+for_window [class=ranger instance=ranger] focus
+for_window [class=mpv] floating enable # enable floating for mpv player
+for_window [class=scrcpy] floating enable # enable floating for scrcpy instances
+for_window [class=code-oss] focus
+for_window [class=Emacs] focus
+for_window [class=qBittorrent] focus
+
+
+#############################################
+# autostart applications/services on login: #
+#############################################
+
+# start the compositor
+exec_always --no-startup-id picom -b
+
+#get auth work with polkit-gnome
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# start nm-applet
+exec --no-startup-id nm-applet
+
+# start blueman-applet
+#exec --no-startup-id blueman-applet
+
+# start a script to setup displays or
+# uncomment the next line, use arandr to setup displays and save the file as monitor:
+exec --no-startup-id ~/.config/i3/scripts/StartupScripts/setup_monitors.sh
+
+# setup polybar
+exec_always --no-startup-id $HOME/.config/i3/scripts/StartupScripts/setup_polybar.sh
+
+# set wallpaper
+exec_always --no-startup-id sleep 3 && nitrogen --restore
+
+# set powersavings for display:
+# exec --no-startup-id xset s 480 dpms 600 600 600
+
+# disable power saving (for example if using xscreensaver)
+exec --no-startup-id xset s off -dpms
+
+# Desktop notifications
+exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
+
+# Greenclip Daemon
+exec --no-startup-id greenclip daemon>/dev/null
+
+##################
+# floating rules #
+##################
+
+# set floating (nontiling) for apps needing it
+for_window [class="Yad" instance="yad"] floating enable
+for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+
+# set floating (nontiling) for special apps
+for_window [class="Xsane" instance="xsane"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [window_role="About"] floating enable
+
+# set border of floating window
+for_window [class="urxvt"] border pixel 1
+
+# set size of floating window
+for_window [window_role="GtkFileChooserDialog"] resize set 788 398
+
+######################################
+# color settings for bar and windows #
+######################################
+
+# define colors for windows:
+# class                 border  bground text    indicator child_border
+
+# client.focused          #9ECE6A #9ECE6A #24283b #9ECE6A   #9ECE6A
+# client.focused_inactive #7AA2F7 #7AA2F7 #24283b #7AA2F7   #7AA2F7
+# client.unfocused        #7AA2F7 #7AA2F7 #24283b #7AA2F7   #7AA2F7
+# client.urgent           #F7768E #F7768E #24283b #F7768E   #F7768E
+# client.placeholder      #7AA2F7 #7AA2F7 #24283b #7AA2F7   #7AA2F7
+
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+
+#####################################
+# Application menu handled by rofi: #
+#####################################
+
+# Keybind for the rofi emoji menu
+bindsym F1 exec ~/.config/i3/scripts/rofi-emoji.sh
+# Keybind for the rofi calc menu
+bindsym F2 exec ~/.config/i3/scripts/rofi-calc.sh
+# Keybind for the rofi demnu
+bindsym $mod+d exec rofi -modi drun -show drun \
+		-config ~/.config/rofi/dracula1.rasi
+# Keybind for the rofi active windows
+bindsym $mod+t exec rofi -show window \
+		-config ~/.config/rofi/dracula1.rasi
+# Keybind for the rofi greenclip clipboard
+bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
+		-config ~/.config/rofi/dracula1.rasi
+
