@@ -10,6 +10,15 @@ Here, inside each config directory, you will find a  `README.md` file that will 
 
 Here are some screenshots of different application running on my i3 window manager on Arch Linux with dracula theme.
 
+![2023-07-27-09:14:25-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/ed77f34b-f1c7-4697-a717-e3fafa7f92dd)
+
+![2023-07-27-09:13:55-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/9ffaa7de-c970-4414-a838-139ce61c377f)
+
+![2023-07-27-09:18:28-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/d07de938-64a8-4b9d-b264-2f5ed5dd1c6d)
+
+![2023-07-27-09:23:26-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/92d0078f-b39d-4e89-9801-2dba74bd2f01)
+
+
 # 💖 Contribution
 
 Any types of modifications, suggestions are alwasy welcome since I'm also trying to explore some new possibilites by trying out different combinations and different configs. 
