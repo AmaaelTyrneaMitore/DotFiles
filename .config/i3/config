@@ -212,6 +212,8 @@ bindsym $mod+a focus parent
 # keybinds to toggle single and dual monitor setup
 bindsym $mod+Shift+n exec ~/.config/i3/scripts/single_display.sh
 bindsym $mod+Shift+m exec ~/.config/i3/scripts/StartupScripts/setup_monitors.sh
+bindsym $mod+Shift+F9 exec ~/.config/i3/scripts/layout_single_edp.sh
+bindsym $mod+Shift+F10 exec ~/.config/i3/scripts/layout_single_hdmi.sh
 
 # keybind to apply the saved layout
 # exec --no-startup-id "i3-msg 'workspace 6:; append_layout /home/honey/.i3/workspace-6.json'"
