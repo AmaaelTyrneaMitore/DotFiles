@@ -77,6 +77,9 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
+# aliast to rate mirrors using rate-mirrors and save them to /etc/pacman.d/mirrorlist
+alias update-mirrors='rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist'
+
 # custom Functions
 function td
   touch file.dart
