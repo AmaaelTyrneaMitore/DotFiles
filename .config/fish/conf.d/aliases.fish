@@ -64,26 +64,37 @@ alias v=lvim
 alias sv='sudo lvim'
 #alias e="emacsclient -c -a 'emacs'"
 alias config='/usr/bin/git --git-dir=$HOME/Documents/Repos/DotFiles --work-tree=$HOME'
-
-# replace 'ls' with 'exa'
-alias ls='exa --icons'
-alias ll='exa -l --git --icons'
-alias la='exa -la --git --icons'
-alias lt='exa -la --git --icons --tree'
 alias edge=microsoft-edge-stable
+alias add-ssh='~/Documents/Repos/Projects/Scripts/add_ssh.py'
+# alias bt-start='sudo systemctl start bluetooth.service'
+# alias bt-stop='sudo systemctl stop bluetooth.service'
+# alias bt-restart='sudo systemctl restart bluetooth.service'
+
+# alias for navigating backwards
 alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
+# replace 'ls' with 'exa'
+alias ls='exa --icons'
+alias ll='exa -l --git --icons'
+alias la='exa -la --git --icons'
+alias lt='exa -la --git --icons --tree'
+
 # aliast to rate mirrors using rate-mirrors and save them to /etc/pacman.d/mirrorlist
 alias update-mirrors='rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist'
 
 # custom Functions
-function td
-  touch file.dart
-  echo "int calculate() {
-  return 6 * 7;
-}" >> file.dart
+
+# for compiling & running c++ file
+function run
+  g++ $argv -o build.out
+  ./build.out
+end
+
+# for managing bluetooth
+function bt
+  sudo systemctl $argv bluetooth.service
 end

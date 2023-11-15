@@ -68,10 +68,10 @@ linters.setup {
     command = "shellcheck",
     args = { "--severity", "warning" },
   },
-  {
-    command = "eslint_d",
-    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" }
-  },
+  -- {
+  --   command = "eslint_d",
+  --   filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" }
+  -- },
   {
     command = "codespell",
     filetypes = { "javascript", "python", "typescript", "typescriptreact" },
