@@ -2,14 +2,15 @@
 
 alpha='dd'
 background='#282a36'
-selection='#44475a'
+selection='#3c5d61'
 comment='#6272a4'
 
 yellow='#f1fa8c'
 orange='#ffb86c'
 red='#ff5555'
-magenta='#ff79c6'
-blue='#6272a4'
+#magenta='#ff79c6'
+magenta='#0fd5b8'
+blue='#2f3e43'
 cyan='#8be9fd'
 green='50fa7b'
 
@@ -29,8 +30,8 @@ i3lock \
   --verif-color=$green \
   --wrong-color=$red \
   --layout-color=$blue \
-  --date-color=$blue \
-  --time-color=$blue \
+  --date-color=$magenta \
+  --time-color=$magenta \
   --screen 1 \
   --blur 1 \
   --clock \

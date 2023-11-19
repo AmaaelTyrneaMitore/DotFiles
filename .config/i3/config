@@ -159,8 +159,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Backlight control
-bindsym XF86MonBrightnessUp exec xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
-bindsym XF86MonBrightnessDown exec xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
+# bindsym XF86MonBrightnessUp exec xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
+# bindsym XF86MonBrightnessDown exec xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
+bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 # change focus
 bindsym $mod+j focus left
@@ -244,7 +246,7 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 #bindsym $mod+w exec /usr/bin/brave
-bindsym $mod+w exec /usr/bin/google-chrome-stable
+bindsym $mod+w exec /usr/bin/brave
 bindsym $mod+n exec /usr/bin/kitty --class ranger -e /usr/bin/ranger
 bindsym Print exec scrot ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym --release Shift+Print exec "scrot -s '%Y-%m-%d-%T-selection.png' -e 'mv $f ~/Pictures/Screenshots/'"
@@ -272,8 +274,8 @@ set $ws10 "10"
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
-workspace $ws1 output HDMI1
-workspace $ws5 output eDP1
+workspace $ws1 output HDMI-1
+workspace $ws5 output eDP-1
 
 # bind program to workspace and focus to them on startup:
 assign [instance="kitty"] $ws1
@@ -373,17 +375,17 @@ for_window [window_role="GtkFileChooserDialog"] resize set 788 398
 # define colors for windows:
 # class                 border  bground text    indicator child_border
 
-# client.focused          #9ECE6A #9ECE6A #24283b #9ECE6A   #9ECE6A
-# client.focused_inactive #7AA2F7 #7AA2F7 #24283b #7AA2F7   #7AA2F7
-# client.unfocused        #7AA2F7 #7AA2F7 #24283b #7AA2F7   #7AA2F7
-# client.urgent           #F7768E #F7768E #24283b #F7768E   #F7768E
-# client.placeholder      #7AA2F7 #7AA2F7 #24283b #7AA2F7   #7AA2F7
+client.focused          #0fd5b8 #0fd5b8 #24283b #0fd5b8   #0fd5b8
+client.focused_inactive #7AA2F7 #7AA2F7 #24283b #7AA2F7   #7AA2F7
+client.unfocused        #7AA2F7 #7AA2F7 #24283b #7AA2F7   #7AA2F7
+client.urgent           #F7768E #F7768E #24283b #F7768E   #F7768E
+client.placeholder      #7AA2F7 #7AA2F7 #24283b #7AA2F7   #7AA2F7
 
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+# client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
