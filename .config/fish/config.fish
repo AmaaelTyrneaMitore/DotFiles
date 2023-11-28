@@ -92,8 +92,3 @@ ssh_agent_init
 
 starship init fish | source
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# eval /home/honey/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
-

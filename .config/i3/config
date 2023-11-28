@@ -248,8 +248,10 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 #bindsym $mod+w exec /usr/bin/brave
 bindsym $mod+w exec /usr/bin/brave
 bindsym $mod+n exec /usr/bin/kitty --class ranger -e /usr/bin/ranger
-bindsym Print exec scrot ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%T")-screenshot.png"
-bindsym --release Shift+Print exec "scrot -s '%Y-%m-%d-%T-selection.png' -e 'mv $f ~/Pictures/Screenshots/'"
+# bindsym Print exec scrot ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym Print exec maim -o ~/Pictures/Screenshots/$(date +%s)-screenshot.png && notify-send "Screenshot saved to ~/Pictures/Screenshots/"
+# bindsym --release Shift+Print exec "scrot -s '%Y-%m-%d-%T-selection.png' -e 'mv $f ~/Pictures/Screenshots/'"
+bindsym --release Shift+Print exec maim -o -s ~/Pictures/Screenshots/$(date +%s)-screenshot.png && notify-send "Screenshot saved to ~/Pictures/Screenshots/"
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -275,7 +277,8 @@ set $ws10 "10"
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
 workspace $ws1 output HDMI-1
-workspace $ws5 output eDP-1
+workspace $ws5 output HDMI-1
+workspace $ws3 output eDP-1
 
 # bind program to workspace and focus to them on startup:
 assign [instance="kitty"] $ws1
@@ -299,6 +302,7 @@ for_window [class=kitty] focus
 for_window [class=(?i)google-chrome] focus
 for_window [class=ranger instance=ranger] focus
 for_window [class=mpv] floating enable # enable floating for mpv player
+for_window [class=mpv] resize set 900
 for_window [class=scrcpy] floating enable # enable floating for scrcpy instances
 for_window [class=code-oss] focus
 for_window [class=Emacs] focus

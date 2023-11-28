@@ -54,6 +54,15 @@ function copy
     end
 end
 
+function fish_display_paths
+  echo $fish_user_paths | tr " " "\n" | nl
+end
+
+function fish_remove_path
+  set --erase --universal fish_user_paths[$argv]
+end
+
+
 
 ############################################
 #                  ALIASES                 # 

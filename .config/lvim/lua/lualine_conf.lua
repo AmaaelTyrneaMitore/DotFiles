@@ -1,7 +1,7 @@
 ----------------------------
 -- AUTHOR: SHASHANK SINGH --
 -- GH: AmaaelTyrneaMitore --
--- THEME: Dracula Theme   --
+-- THEME: Tokyonight Theme   --
 ----------------------------
 
 local status_ok, lualine = pcall(require, "lualine")
@@ -11,15 +11,15 @@ end
 
 -- stylua: ignore
 local colors = {
-  blue   = '#8be9fd',
-  green  = '#50fa7b',
-  black  = '#282a36',
-  white  = '#f8f8f2',
-  red    = '#ff5555',
-  violet = '#bd93f9',
-  grey   = '#44475a',
-  yellow = '#f1fa8c',
-  orange = '#ffb86c'
+  blue   = '#2ac3de',
+  green  = '#9ece6a',
+  black  = '#1a1b26',
+  white  = '#c0caf5',
+  red    = '#f7768e',
+  violet = '#bb9af7',
+  grey   = '#24283b',
+  yellow = '#e0af68',
+  orange = '#9ece6a'
 }
 
 local dracula_theme = {

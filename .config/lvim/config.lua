@@ -1,14 +1,16 @@
 -- GENERAL
 
 
+
 lvim.format_on_save = true
-lvim.colorscheme = "dracula"
 vim.diagnostic.config({ virtual_text = false })
 vim.opt.cmdheight = 1
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tailwindcss" })
 
 
+
 -- KEYBINDINGS
+
 
 
 lvim.leader = "space"
@@ -19,21 +21,9 @@ lvim.keys.normal_mode["L"] = ":BufferLineCycleNext<cr>"
 lvim.keys.insert_mode["jk"] = "<ESC>"
 
 
--- ADDITIONAL PLUGINS
 
+-- LSP CONFIGURATION
 
-lvim.plugins = {
-  { 'Mofiqul/dracula.nvim' },
-  --   { "norcalli/nvim-colorizer.lua" },
-  --   { "lukas-reineke/indent-blankline.nvim" },
-  --   { "mfussenegger/nvim-dap" },
-  --   { "theHamsta/nvim-dap-virtual-text" },
-  --   { "nvim-telescope/telescope-dap.nvim" },
-  --   { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
-}
-
-
--- LSP CONFIGURATRION
 
 
 -- Formatters
@@ -48,11 +38,6 @@ formatters.setup {
     command = "isort",
     filetypes = { "python" }
   },
-  -- {
-  --   command = "prettier",
-  --   args = { "--print-width", "80" },
-  --   filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "css", "json" },
-  -- },
   {
     command = "prettierd",
     filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "css", "json" },
@@ -68,15 +53,16 @@ linters.setup {
     command = "shellcheck",
     args = { "--severity", "warning" },
   },
-  -- {
-  --   command = "eslint_d",
-  --   filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" }
-  -- },
+  {
+    command = "eslint_d",
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" }
+  },
   {
     command = "codespell",
     filetypes = { "javascript", "python", "typescript", "typescriptreact" },
   },
 }
+
 
 
 -- PLUGIN CONF
@@ -95,9 +81,6 @@ lvim.builtin.alpha.dashboard.section.header.val = {
   [[| (   ) || |   | || | \   || (         ) (    \ \_/ /    | |   | |   | |]],
   [[| )   ( || (___) || )  \  || (____/\   | |     \   /  ___) (___| )   ( |]],
   [[|/     \|(_______)|/    )_)(_______/   \_/      \_/   \_______/|/     \|]],
-  [[                                                                        ]],
-  [[                                                                        ]],
-  [[                                                                        ]],
   [[                                                                        ]],
 
 }
