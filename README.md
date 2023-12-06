@@ -1,6 +1,6 @@
 # 💫 Dotfiles 💻
 
-This the current configuration that I use with my **Arch Linux + i3wm** setup. Here, you will find all the configurations related to the apps that I use in my day-to-day workflow with a touch of **Dracula** theme.
+This the current configuration that I use with my **Arch Linux + i3wm** setup. Here, you will find all the configurations related to the apps that I use in my day-to-day workflow with a touch of **Teal Theme** theme.
 
 # 👀 Navigation
 
@@ -8,15 +8,16 @@ Here, inside each config directory, you will find a  `README.md` file that will 
 
 # 🖼️ Screenshots
 
-Here are some screenshots of different application running on my i3 window manager on Arch Linux with dracula theme.
+Here are some screenshots of different application running on my i3 window manager on Arch Linux with teal theme.
 
-![2023-07-27-09:14:25-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/ed77f34b-f1c7-4697-a717-e3fafa7f92dd)
+![1701833115-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/7e61c409-33bc-4bd5-9a0f-510e11709931)
 
-![2023-07-27-09:13:55-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/9ffaa7de-c970-4414-a838-139ce61c377f)
+![1701833123-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/c5ae395b-4373-45d8-852a-89efa8de153f)
 
-![2023-07-27-09:18:28-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/d07de938-64a8-4b9d-b264-2f5ed5dd1c6d)
+![1701833248-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/78fa0709-6998-4b26-89fd-4ba916182048)
 
-![2023-07-27-09:23:26-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/92d0078f-b39d-4e89-9801-2dba74bd2f01)
+![1701833295-screenshot](https://github.com/AmaaelTyrneaMitore/DotFiles/assets/96770927/beabd2c6-9afe-4e26-b5c9-2ea33e4b90f8)
+
 
 
 # 💖 Contribution
